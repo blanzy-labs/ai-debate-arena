@@ -6,6 +6,14 @@ Mythadis AI Debate Arena is a local-first open-source tool for structured disagr
 
 This release target is `v0.1.0 - Local Debate MVP`. The current implementation is the project foundation only: a FastAPI backend skeleton, a React/Vite frontend skeleton, environment configuration, Docker Compose, and starter documentation.
 
+## Mythadis Labs Context
+
+Mythadis Labs is the open-source project series connected to the broader Mythadis creative work. The fictional books provide the atmosphere; the software projects are real tools built around practical questions.
+
+AI Debate Arena is one of those tools. It is designed to stress-test ideas through structured disagreement rather than produce a single consensus answer.
+
+> The books are fiction. The questions are real.
+
 ## Prerequisites
 
 - Python 3.12+
@@ -81,6 +89,17 @@ docker compose down
 ```
 
 Docker Compose reads `.env`, not `.env.example`.
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Security and Privacy](docs/security.md)
+- [Security Notes](docs/security-notes.md)
+- [Prompt Design](docs/prompt-design.md)
+- [Local Install Guide](docs/local-install.md)
+- [Demo Script](docs/demo-script.md)
+- [Sample Report](docs/sample-report.md)
+- [Contributing](CONTRIBUTING.md)
 
 ## Current Scope
 
