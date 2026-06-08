@@ -31,7 +31,7 @@ DEBATE_MODES: dict[str, DebateMode] = {
             "what could make the idea fail."
         ),
         judge_guidance=(
-            "Compare the promise and risk arguments without declaring absolute truth."
+            "The Judge should compare promise against risk without declaring certainty."
         ),
     ),
     "builder_vs_breaker": DebateMode(
@@ -41,15 +41,16 @@ DEBATE_MODES: dict[str, DebateMode] = {
         debater_b_role="Breaker",
         intent="Stress-test implementation versus failure modes.",
         debater_a_guidance=(
-            "The Builder should make the strongest implementation case, explain how it "
-            "could work, and name practical requirements."
+            "The Builder should focus on practical execution, sequencing, resources, "
+            "and what can be shipped."
         ),
         debater_b_guidance=(
-            "The Breaker should find failure modes, operational risks, and assumptions "
-            "that could collapse under pressure."
+            "The Breaker should look for edge cases, operational failures, dependencies, "
+            "hidden costs, and brittle assumptions."
         ),
         judge_guidance=(
-            "Compare implementation strength against failure modes without declaring absolute truth."
+            "The Judge should identify what appears buildable, what could break, "
+            "and what should be tested first."
         ),
     ),
     "humanist_vs_technologist": DebateMode(
@@ -59,14 +60,16 @@ DEBATE_MODES: dict[str, DebateMode] = {
         debater_b_role="Technologist",
         intent="Stress-test human impact versus technical capability.",
         debater_a_guidance=(
-            "The Humanist should focus on people, incentives, dignity, access, and social impact."
+            "The Humanist should focus on human needs, social effects, ethics, usability, "
+            "trust, and lived consequences."
         ),
         debater_b_guidance=(
-            "The Technologist should focus on capabilities, technical constraints, systems, "
-            "and what the technology can reliably do."
+            "The Technologist should focus on technical feasibility, system design, automation, "
+            "scalability, and measurable capability."
         ),
         judge_guidance=(
-            "Compare human impact and technical capability without declaring absolute truth."
+            "The Judge should compare human impact against technical capability and "
+            "identify unresolved tradeoffs."
         ),
     ),
     "security_lead_vs_product_lead": DebateMode(
@@ -76,14 +79,16 @@ DEBATE_MODES: dict[str, DebateMode] = {
         debater_b_role="Product Lead",
         intent="Stress-test risk control versus product delivery.",
         debater_a_guidance=(
-            "The Security Lead should identify risk, misuse, governance needs, and controls."
+            "The Security Lead should focus on threat models, misuse, data exposure, "
+            "abuse cases, compliance, and operational risk."
         ),
         debater_b_guidance=(
-            "The Product Lead should identify user value, delivery constraints, adoption, "
-            "and practical tradeoffs."
+            "The Product Lead should focus on user value, delivery speed, adoption, "
+            "usability, and viable scope."
         ),
         judge_guidance=(
-            "Compare risk controls and product delivery tradeoffs without declaring absolute truth."
+            "The Judge should compare risk control against product momentum and "
+            "recommend practical next steps."
         ),
     ),
 }

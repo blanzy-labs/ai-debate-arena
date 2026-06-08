@@ -54,6 +54,18 @@ GEMINI_MODEL=gemini-2.5-flash
 
 Empty API keys are valid for this foundation slice and do not break health checks.
 
+## Privacy and Data Flow
+
+Mythadis AI Debate Arena is local-first, but provider-backed debates still send the debate question and generated debate context to the selected AI providers when a debate is run.
+
+API keys are loaded by the FastAPI backend from local environment variables. The frontend never receives OpenAI or Gemini keys.
+
+The `v0.1.0` local MVP does not include login, a database, telemetry, analytics, prompt history, or server-side result storage.
+
+Markdown export is generated in the browser from the current result and downloaded locally. The server does not create, store, or retain exported reports.
+
+Do not enter sensitive, confidential, regulated, or customer data unless you are comfortable sending that content to the selected AI providers under their terms and policies.
+
 ## Docker Commands
 
 Run the full local stack:

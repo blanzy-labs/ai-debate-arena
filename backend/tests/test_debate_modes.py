@@ -16,7 +16,9 @@ def test_all_v1_modes_exist_with_required_fields() -> None:
     assert set(DEBATE_MODES) == EXPECTED_MODES
 
     for mode in DEBATE_MODES.values():
+        assert mode.slug
         assert mode.display_name
+        assert mode.intent
         assert mode.debater_a_role
         assert mode.debater_b_role
         assert mode.judge_guidance

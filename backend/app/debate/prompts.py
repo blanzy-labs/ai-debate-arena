@@ -1,19 +1,37 @@
 from app.debate.modes import DebateMode
 
 
+SAFETY_AND_LIMITATIONS = """Safety and limitations:
+- Avoid fake citations: do not invent citations, sources, studies, statistics, or external facts.
+- Do not claim you browsed the web, checked live sources, did research, or verified current facts unless those sources are explicitly provided in this prompt.
+- Frame conclusions as debate arguments, assumptions, and tradeoffs rather than guaranteed truth.
+- Acknowledge uncertainty where the available information is incomplete.
+- Avoid giving instructions that would enable harm, fraud, credential theft, privacy invasion, or other unsafe behavior."""
+
+
 def build_opening_prompt(question: str, mode: DebateMode, side: str) -> str:
     role = mode.debater_a_role if side == "a" else mode.debater_b_role
     guidance = mode.debater_a_guidance if side == "a" else mode.debater_b_guidance
 
-    return f"""Question: {question}
+    return f"""You are participating in Mythadis AI Debate Arena, a structured debate tool for stress-testing disagreement. This is not a final answer engine.
+
+Question: {question}
 Debate mode: {mode.display_name}
 Mode intent: {mode.intent}
 Your role: {role}
 Role guidance: {guidance}
 
-Write your opening argument.
-Stay in role, make a clear argument, state assumptions, avoid fake citations, and avoid claiming certainty where uncertainty exists.
-Keep the answer concise enough for an MVP."""
+Task:
+Make the strongest useful opening argument from your assigned role while staying focused on the question. State your assumptions clearly. Avoid declaring absolute truth.
+
+{SAFETY_AND_LIMITATIONS}
+
+Use this concise structure:
+Position:
+Key Arguments:
+Assumptions:
+Risks or Caveats:
+What Would Change My View:"""
 
 
 def build_rebuttal_prompt(
@@ -32,8 +50,11 @@ def build_rebuttal_prompt(
     if debater_a_rebuttal:
         prior_rebuttal = f"\nDebater A rebuttal:\n{debater_a_rebuttal}\n"
 
-    return f"""Question: {question}
+    return f"""You are participating in Mythadis AI Debate Arena, a structured debate tool for stress-testing disagreement. This is not a final answer engine.
+
+Question: {question}
 Debate mode: {mode.display_name}
+Mode intent: {mode.intent}
 Your role: {role}
 Opposing role: {opposing_role}
 Role guidance: {guidance}
@@ -44,9 +65,17 @@ Debater A opening:
 Debater B opening:
 {debater_b_opening}
 {prior_rebuttal}
-Write your rebuttal.
-Respond directly to the opposing opening, identify the strongest challenge, acknowledge valid opposing points, and avoid simply repeating your opening.
-Avoid fake citations and avoid claiming certainty where uncertainty exists."""
+Task:
+Write a direct rebuttal. Address the opposing argument, identify the strongest opposing point, acknowledge valid opposing points, challenge assumptions, and do not merely repeat your opening argument.
+
+{SAFETY_AND_LIMITATIONS}
+
+Use this concise structure:
+Strongest Opposing Point:
+Response:
+Assumptions Challenged:
+Valid Points Acknowledged:
+Revised Position:"""
 
 
 def build_judge_prompt(
@@ -61,7 +90,9 @@ def build_judge_prompt(
 Debate mode: {mode.display_name}
 Mode intent: {mode.intent}
 Debater A role: {mode.debater_a_role}
+Debater A guidance: {mode.debater_a_guidance}
 Debater B role: {mode.debater_b_role}
+Debater B guidance: {mode.debater_b_guidance}
 Judge guidance: {mode.judge_guidance}
 
 Debater A opening:
@@ -77,8 +108,10 @@ Debater B rebuttal:
 {debater_b_rebuttal}
 
 Return JSON only. Do not wrap JSON in Markdown fences.
-Do not declare absolute truth. Compare argument quality and assumptions, identify unresolved issues, recommend next steps, and suggest follow-up debates.
-Avoid fake citations.
+Compare argument quality rather than picking a team theatrically. Do not declare absolute truth.
+Identify assumptions, uncertainties, weak assumptions, unresolved issues, useful next steps, and follow-up debates.
+
+{SAFETY_AND_LIMITATIONS}
 
 Use this exact JSON contract:
 {{
