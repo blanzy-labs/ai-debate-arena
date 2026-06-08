@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
+from app.debate.router import router as debate_router
 
 
 app = FastAPI(title=settings.app_name, version=settings.version)
@@ -16,6 +17,8 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+app.include_router(debate_router)
 
 
 @app.get("/health")
