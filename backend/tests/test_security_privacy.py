@@ -6,7 +6,7 @@ from app import main
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-TEXT_SUFFIXES = {".html", ".json", ".py", ".ts", ".tsx", ".txt"}
+TEXT_SUFFIXES = {".html", ".json", ".md", ".py", ".ts", ".tsx", ".txt"}
 
 
 def read_text(path: Path) -> str:
@@ -68,6 +68,45 @@ def test_frontend_does_not_reference_provider_secrets() -> None:
 
 def test_backend_app_does_not_hard_code_real_looking_provider_keys() -> None:
     text = collect_text([REPO_ROOT / "backend" / "app"])
+
+    assert "sk-" not in text
+    assert "AIza" not in text
+
+
+def test_release_readiness_docs_exist() -> None:
+    required_paths = [
+        REPO_ROOT / "README.md",
+        REPO_ROOT / "CHANGELOG.md",
+        REPO_ROOT / "docs" / "release-notes-v0.1.0.md",
+        REPO_ROOT / "docs" / "release-checklist.md",
+        REPO_ROOT / "docs" / "architecture.md",
+        REPO_ROOT / "docs" / "security.md",
+        REPO_ROOT / "docs" / "security-notes.md",
+        REPO_ROOT / "docs" / "prompt-design.md",
+        REPO_ROOT / "docs" / "local-install.md",
+        REPO_ROOT / "docs" / "demo-script.md",
+        REPO_ROOT / "docs" / "sample-report.md",
+        REPO_ROOT / "CONTRIBUTING.md",
+        REPO_ROOT / ".github" / "ISSUE_TEMPLATE" / "bug_report.md",
+        REPO_ROOT / ".github" / "ISSUE_TEMPLATE" / "feature_request.md",
+        REPO_ROOT / ".github" / "ISSUE_TEMPLATE" / "prompt_improvement.md",
+    ]
+
+    for path in required_paths:
+        assert path.is_file()
+
+
+def test_public_docs_do_not_contain_real_looking_provider_keys() -> None:
+    text = collect_text(
+        [
+            REPO_ROOT / "README.md",
+            REPO_ROOT / "CHANGELOG.md",
+            REPO_ROOT / "CONTRIBUTING.md",
+            REPO_ROOT / ".env.example",
+            REPO_ROOT / "docs",
+            REPO_ROOT / ".github",
+        ]
+    )
 
     assert "sk-" not in text
     assert "AIza" not in text
