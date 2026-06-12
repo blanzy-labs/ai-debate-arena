@@ -48,10 +48,11 @@ export async function runDebate(request: DebateRequest): Promise<DebateResponse>
 }
 
 async function safeErrorMessage(response: Response): Promise<string> {
-  const fallback =
-    response.status === 422
-      ? "The debate request is invalid. Check the question, mode, and providers."
-      : "The debate could not be completed. Please check the backend logs and try again.";
+  const fallback = fallbackErrorMessage(response.status);
+
+  if (!canShowBackendMessage(response.status)) {
+    return fallback;
+  }
 
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) {
@@ -74,6 +75,16 @@ async function safeErrorMessage(response: Response): Promise<string> {
   }
 
   return fallback;
+}
+
+function fallbackErrorMessage(status: number) {
+  return status === 422
+    ? "The debate request is invalid. Check the question, mode, and providers."
+    : "The debate could not be completed. Please check the backend logs and try again.";
+}
+
+function canShowBackendMessage(status: number) {
+  return status === 400 || status === 422 || status === 502;
 }
 
 function isSafeMessage(message: string) {
