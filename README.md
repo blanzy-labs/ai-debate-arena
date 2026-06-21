@@ -196,6 +196,7 @@ Do not enter sensitive, confidential, regulated, or customer data unless you are
 - [Sample Report](docs/sample-report.md)
 - [Release Notes v0.1.0](docs/release-notes-v0.1.0.md)
 - [Release Checklist](docs/release-checklist.md)
+- [Disclaimer](docs/disclaimer.md)
 - [Changelog](CHANGELOG.md)
 
 ## Contributing And Security
