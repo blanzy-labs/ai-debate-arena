@@ -7,8 +7,8 @@ ROOT_ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
 
 
 class Settings(BaseSettings):
-    app_name: str = "Mythadis AI Debate Arena"
-    version: str = "0.1.0-local-foundation"
+    app_name: str = "AI Debate Arena"
+    version: str = "0.1.1"
     openai_api_key: str = ""
     gemini_api_key: str = ""
     openai_model: str = "gpt-4.1-mini"

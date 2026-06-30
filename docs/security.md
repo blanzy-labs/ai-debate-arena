@@ -2,7 +2,9 @@
 
 ## Summary
 
-Mythadis AI Debate Arena is a local-first MVP. It is designed to avoid storage and keep provider API keys out of the browser.
+AI Debate Arena is a local-first MVP. It is designed to avoid storage and keep provider API keys out of the browser.
+
+For the standard security and privacy entry point, see [Security And Privacy](security-and-privacy.md). For liability, usage, data, and cost boundaries, see [Disclaimer](disclaimer.md).
 
 ## Local-First Does Not Mean Provider-Private
 
@@ -20,7 +22,7 @@ The backend sends prompts to the selected provider for each debate step. Provide
 
 ## No Server-Side Storage
 
-The v0.1.0 MVP has no login, database, telemetry, analytics, prompt history, or server-side result storage.
+The local MVP has no login, database, telemetry, analytics, prompt history, or server-side result storage.
 
 ## Browser-Side Markdown Export
 
@@ -38,7 +40,7 @@ Dependencies should stay minimal and purposeful. Prefer official SDKs and mainta
 
 Contributors must not commit `.env`, paste secrets into issues or PRs, add storage by default, add telemetry, or put provider keys in frontend code.
 
-## Known v0.1.0 Security Limitations
+## Known Security Limitations
 
 This MVP does not include auth, a secrets manager, formal security audit, rate limiting, abuse protection, compliance controls, or deployment hardening.
 
@@ -47,3 +49,4 @@ This MVP does not include auth, a secrets manager, formal security audit, rate l
 - [Security Notes](security-notes.md)
 - [Architecture](architecture.md)
 - [Local Install Guide](local-install.md)
+- [Disclaimer](disclaimer.md)

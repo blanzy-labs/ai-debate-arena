@@ -1,11 +1,11 @@
-# Mythadis AI Debate Arena Report
+# AI Debate Arena Report
 
-> The books are fiction. The questions are real.
+> Structured disagreement for better decisions.
 
 > Sample content only. This is not real provider output.
 
 Generated: 2026-06-08 19:42:10
-App: Mythadis AI Debate Arena
+App: AI Debate Arena
 Debate Mode: Builder vs Breaker
 Question: Should small cafes use AI tools to improve daily profit decisions?
 

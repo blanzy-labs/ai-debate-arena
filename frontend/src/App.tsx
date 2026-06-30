@@ -265,9 +265,9 @@ export default function App() {
   return (
     <main className="app-shell">
       <section className="intro">
-        <p className="project-label">Mythadis Labs App #2</p>
-        <h1>Mythadis AI Debate Arena</h1>
-        <p className="tagline">The books are fiction. The questions are real.</p>
+        <p className="project-label">Blanzy Labs / AI app family</p>
+        <h1>AI Debate Arena</h1>
+        <p className="tagline">Structured disagreement for better decisions.</p>
       </section>
 
       <section className="status-panel" aria-labelledby="backend-status-title">

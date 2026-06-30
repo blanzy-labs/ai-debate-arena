@@ -10,7 +10,7 @@
 ## Clone the Repository
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/blanzy-labs/ai-debate-arena.git
 cd ai-debate-arena
 ```
 
@@ -98,6 +98,8 @@ Check that the app title, backend status, debate form, mode selector, provider s
 After a successful debate result, use `Export Markdown Report`. The report is generated in the browser and downloaded locally. The server does not store it.
 
 ## Troubleshooting
+
+See [Troubleshooting](troubleshooting.md) for the standard troubleshooting guide.
 
 - Backend not running: start FastAPI or Docker Compose and retry `/health`.
 - Frontend cannot reach backend: check `VITE_API_BASE_URL`, CORS, and port `8000`.

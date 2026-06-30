@@ -1,16 +1,16 @@
-# Mythadis AI Debate Arena
+# AI Debate Arena
 
-**The books are fiction. The questions are real.**
+AI Debate Arena is a local-first Blanzy Labs AI app for structured multi-perspective debate workflows using AI personas and model-based judging.
 
-Mythadis AI Debate Arena is a local-first open-source tool for structured disagreement and argument stress-testing. It lets two AI personas argue different sides of a question, then asks a judge model to summarize argument quality, assumptions, unresolved questions, and next steps.
+Part of the Blanzy Labs AI app family.
 
-Release target: `v0.1.0 - Local Debate MVP`.
+Current release: `v0.1.1 - Blanzy Labs Standardization Patch`.
 
-## Mythadis Labs Context
+Original MVP release: `v0.1.0 - Local Debate MVP`.
 
-Mythadis Labs is the open-source project series connected to the broader Mythadis creative work. The fictional books provide the atmosphere; the software projects are real tools built around practical questions.
+## Blanzy Labs Context
 
-AI Debate Arena is App #2 in the Mythadis Labs series. It is designed to stress-test ideas through structured disagreement rather than produce a single consensus answer.
+AI Debate Arena is one app in the Blanzy Labs AI app family. It is designed to stress-test ideas through structured disagreement rather than produce a single consensus answer.
 
 ## What The App Does
 
@@ -24,7 +24,7 @@ Consensus Engine seeks the best balanced answer. Debate Arena seeks productive d
 
 Debate Arena is useful when you want to expose assumptions, tradeoffs, weak points, and follow-up questions before making a decision. The judge summary is not an oracle or a fact-checking engine; it is a structured synthesis of the debate.
 
-## Current v0.1.0 Features
+## Current Scope
 
 - React/Vite frontend
 - FastAPI backend
@@ -53,7 +53,7 @@ Debate Arena is useful when you want to expose assumptions, tradeoffs, weak poin
 
 ## Intentionally Not Included
 
-The `v0.1.0` local MVP intentionally does not include:
+The local MVP intentionally does not include:
 
 - No login/auth
 - No database
@@ -78,6 +78,13 @@ The `v0.1.0` local MVP intentionally does not include:
 - Docker and Docker Compose, for containerized local runs
 
 ## Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/blanzy-labs/ai-debate-arena.git
+cd ai-debate-arena
+```
 
 Create a local environment file:
 
@@ -142,6 +149,28 @@ npm run dev -- --host 0.0.0.0
 
 Open the frontend at `http://localhost:5173`. The backend health endpoint is available at `http://localhost:8000/health`.
 
+## Validation
+
+Run backend tests:
+
+```bash
+cd backend
+python -m pytest
+```
+
+Run the frontend build:
+
+```bash
+cd frontend
+npm run build
+```
+
+Build the local Docker stack:
+
+```bash
+docker compose build
+```
+
 ## Browser Testing
 
 Suggested smoke test:
@@ -177,26 +206,31 @@ A static example is available in [Sample Report](docs/sample-report.md).
 
 ## Privacy And Data Flow
 
-Mythadis AI Debate Arena is local-first, but provider-backed debates still send the debate question and generated debate context to the selected AI providers when a debate is run.
+AI Debate Arena is local-first, but provider-backed debates still send the debate question and generated debate context to the selected AI providers when a debate is run.
 
 API keys are loaded by the FastAPI backend from local environment variables. The frontend never receives OpenAI or Gemini keys.
 
-The `v0.1.0` local MVP has no login, database, telemetry, analytics, prompt history, local browser persistence, or server-side prompt/result storage.
+The local MVP has no login, database, telemetry, analytics, prompt history, local browser persistence, or server-side prompt/result storage.
 
 Do not enter sensitive, confidential, regulated, or customer data unless you are comfortable sending that content to the selected providers under their terms and policies.
 
 ## Documentation
 
 - [Architecture](docs/architecture.md)
-- [Security and Privacy](docs/security.md)
+- [Security and Privacy](docs/security-and-privacy.md)
+- [Detailed Security Notes](docs/security.md)
 - [Security Notes](docs/security-notes.md)
 - [Prompt Design](docs/prompt-design.md)
 - [Local Install Guide](docs/local-install.md)
+- [Troubleshooting](docs/troubleshooting.md)
 - [Demo Script](docs/demo-script.md)
 - [Sample Report](docs/sample-report.md)
 - [Release Notes v0.1.0](docs/release-notes-v0.1.0.md)
+- [Release Notes v0.1.1](docs/release-notes/v0.1.1.md)
+- [Validation v0.1.1](docs/validation/v0.1.1-validation.md)
 - [Release Checklist](docs/release-checklist.md)
 - [Disclaimer](docs/disclaimer.md)
+- [License](LICENSE)
 - [Changelog](CHANGELOG.md)
 
 ## Contributing And Security
@@ -210,4 +244,6 @@ Do not include `.env`, API keys, secrets, customer data, or sensitive debate con
 
 ## Release Status
 
-`v0.1.0 - Local Debate MVP` is release-ready for local use and demo validation. It is not production hardened and does not claim enterprise compliance, hosted deployment readiness, or factual verification of model outputs.
+`v0.1.1 - Blanzy Labs Standardization Patch` is a docs, naming, metadata, branch-standardization, and release-readiness cleanup release. There are no functional, API, dependency, or migration changes from `v0.1.0`.
+
+AI Debate Arena is not production hardened and does not claim enterprise compliance, hosted deployment readiness, or factual verification of model outputs.

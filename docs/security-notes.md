@@ -1,8 +1,8 @@
-# Mythadis AI Debate Arena Security Notes
+# AI Debate Arena Security Notes
 
 ## Local-First Security Posture
 
-The v0.1.0 MVP is designed to run locally. It has no login, database, telemetry, analytics, prompt history, or server-side prompt/result storage.
+The local MVP is designed to run locally. It has no login, database, telemetry, analytics, prompt history, or server-side prompt/result storage.
 
 ## API Key Handling
 
@@ -22,7 +22,7 @@ Markdown export is generated in the browser from the current result and download
 
 ## Dependency Policy
 
-Keep dependencies minimal. Prefer official SDKs and well-maintained packages. Avoid adding packages for trivial utilities. Review transitive dependencies before adding new libraries. Do not add telemetry or analytics packages to v0.1.0.
+Keep dependencies minimal. Prefer official SDKs and well-maintained packages. Avoid adding packages for trivial utilities. Review transitive dependencies before adding new libraries. Do not add telemetry or analytics packages to the local MVP.
 
 ## Suggested Local Dependency Checks
 
@@ -60,6 +60,6 @@ Audit results can change as public advisories change, so these commands are sugg
 - Run backend tests and frontend build before a PR or release.
 - Run secret greps before commit.
 
-## Known v0.1.0 Security Limitations
+## Known Security Limitations
 
 This MVP does not include auth, a secrets manager, deployment hardening, encryption workflows, compliance controls, an advanced safety classifier, or CI security scanning. It is a local MVP for structured debate, not an enterprise security product.

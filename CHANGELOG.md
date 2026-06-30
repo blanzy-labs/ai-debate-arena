@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.1.1 - Blanzy Labs Standardization Patch
+
+Docs, naming, metadata, branch-standardization, and release-readiness patch.
+
+### Changed
+
+- Updated public display naming to AI Debate Arena.
+- Added Blanzy Labs AI app family positioning.
+- Added standard security/privacy, troubleshooting, release notes, and validation docs.
+- Added MIT `LICENSE`.
+- Standardized the GitHub default branch to `main`.
+
+No functional changes, API changes, dependency changes, or migration required.
+
 ## v0.1.0 - Local Debate MVP
 
 Initial local MVP release of Mythadis AI Debate Arena.

@@ -1,4 +1,4 @@
-## Disclaimer
+# Disclaimer
 
 This application is provided for informational, educational, experimental, and/or demonstration purposes only. It is provided “as is” without warranties of any kind, either express or implied.
 
@@ -11,4 +11,3 @@ AI-generated outputs may be incomplete, inaccurate, biased, misleading, or unsui
 Do not submit sensitive, confidential, regulated, proprietary, personal, or client data unless you fully understand and accept the risks associated with the model providers, APIs, infrastructure, and configuration you are using.
 
 By using this application, you acknowledge that you are responsible for your own usage, costs, data, decisions, and outcomes.
-

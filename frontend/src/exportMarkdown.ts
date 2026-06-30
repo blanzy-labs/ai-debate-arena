@@ -1,7 +1,7 @@
 import type { DebateResponse } from "./types";
 
-const APP_NAME = "Mythadis AI Debate Arena";
-const TAGLINE = "The books are fiction. The questions are real.";
+const APP_NAME = "AI Debate Arena";
+const TAGLINE = "Structured disagreement for better decisions.";
 
 export function buildDebateMarkdownReport(result: DebateResponse, generatedAt = new Date()): string {
   const generated = formatTimestamp(generatedAt);
@@ -109,7 +109,7 @@ export function buildMarkdownFilename(now = new Date()): string {
     .slice(0, 8)
     .replace(/:/g, "");
 
-  return `mythadis-debate-report-${date}-${time}.md`;
+  return `ai-debate-arena-report-${date}-${time}.md`;
 }
 
 function formatTimestamp(date: Date): string {

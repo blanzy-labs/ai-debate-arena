@@ -2,7 +2,7 @@
 
 ## Demo Goal
 
-Show how Mythadis AI Debate Arena stress-tests a question through structured disagreement, then exports the result as a local Markdown report.
+Show how AI Debate Arena stress-tests a question through structured disagreement, then exports the result as a local Markdown report.
 
 ## Suggested Demo Question
 
@@ -63,4 +63,4 @@ After a successful debate, click `Export Markdown Report`. Explain that the file
 
 ## Closing Line
 
-The books are fiction. The questions are real.
+AI Debate Arena is part of the Blanzy Labs AI app family.

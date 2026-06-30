@@ -1,8 +1,8 @@
-# Contributing to Mythadis AI Debate Arena
+# Contributing to AI Debate Arena
 
 ## Welcome
 
-Thanks for helping improve Mythadis AI Debate Arena. This project is a local-first MVP for structured disagreement.
+Thanks for helping improve AI Debate Arena. This project is a local-first Blanzy Labs AI app for structured disagreement.
 
 ## Project Principles
 
@@ -103,4 +103,4 @@ Use the issue templates. Do not include secrets, API keys, customer data, or sen
 
 ## Release Target
 
-Current release target: `v0.1.0 - Local Debate MVP`.
+Current release target: `v0.1.1 - Blanzy Labs Standardization Patch`.

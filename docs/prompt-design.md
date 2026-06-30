@@ -1,16 +1,16 @@
-# Mythadis AI Debate Arena Prompt Design
+# AI Debate Arena Prompt Design
 
 ## Purpose
 
-Mythadis AI Debate Arena uses prompts to create structured disagreement around a question. The goal is not to produce a single final answer. The goal is to make assumptions, tradeoffs, risks, and unresolved questions easier to inspect.
+AI Debate Arena uses prompts to create structured disagreement around a question. The goal is not to produce a single final answer. The goal is to make assumptions, tradeoffs, risks, and unresolved questions easier to inspect.
 
 Provider calls are made only when a debate is run. The app does not browse the web, create real citations, or store prompt/result history.
 
 ## Debate Arena vs Consensus Engine
 
-Mythadis Consensus Engine seeks the best balanced answer.
+AI Consensus Engine seeks the best balanced answer.
 
-Mythadis AI Debate Arena seeks useful disagreement. Debaters argue from different roles, then a judge summarizes argument quality, weak assumptions, unresolved issues, and practical next steps. The judge is not an oracle and does not declare absolute truth.
+AI Debate Arena seeks useful disagreement. Debaters argue from different roles, then a judge summarizes argument quality, weak assumptions, unresolved issues, and practical next steps. The judge is not an oracle and does not declare absolute truth.
 
 ## Prompt Design Principles
 
@@ -100,10 +100,8 @@ All debate prompts include guidance to:
 - Acknowledge uncertainty when information is incomplete.
 - Avoid instructions that enable harm, fraud, credential theft, privacy invasion, or other unsafe behavior.
 
-## What v0.1.0 Intentionally Does Not Do
+## What The Local MVP Intentionally Does Not Do
 
-- No frontend debate form yet.
-- No Markdown export.
 - No database, login, prompt history, telemetry, or analytics.
 - No server-side prompt/result storage.
 - No browsing feature or citation engine.

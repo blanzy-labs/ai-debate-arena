@@ -1,8 +1,8 @@
-# Mythadis AI Debate Arena Architecture
+# AI Debate Arena Architecture
 
 ## Purpose
 
-Mythadis AI Debate Arena is a local-first MVP for structured disagreement. It lets two AI personas argue different sides of a question, then asks a judge model to summarize argument quality and unresolved issues.
+AI Debate Arena is a local-first Blanzy Labs AI app for structured disagreement. It lets two AI personas argue different sides of a question, then asks a judge model to summarize argument quality and unresolved issues.
 
 ## High-Level Architecture
 
@@ -66,15 +66,17 @@ Backend provider keys and model names are configured through local environment v
 
 The app is local-first, but provider-backed debates send the question and generated debate context to selected AI providers. Users should not enter sensitive, confidential, regulated, or customer data unless that provider data flow is acceptable.
 
+See [Security And Privacy](security-and-privacy.md) and [Disclaimer](disclaimer.md).
+
 ## No-Storage MVP Design
 
-The v0.1.0 MVP has no database, no login, no telemetry, no analytics, no prompt history, and no server-side prompt/result storage.
+The local MVP has no database, no login, no telemetry, no analytics, no prompt history, and no server-side prompt/result storage.
 
 ## Docker and Local Development
 
 Docker Compose starts the backend and frontend locally. Manual startup is also supported with a Python virtual environment for the backend and npm for the frontend.
 
-## Current v0.1.0 Limitations
+## Current Limitations
 
 This MVP does not include auth, persistence, streaming, browsing, citation generation, provider retries beyond safe wrapping, report history, share links, or production deployment hardening.
 
